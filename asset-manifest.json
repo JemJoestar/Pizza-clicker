@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Pizza-clicker/static/css/main.7d40bf6a.css",
+    "main.js": "/Pizza-clicker/static/js/main.3693bc30.js",
+    "index.html": "/Pizza-clicker/index.html",
+    "main.7d40bf6a.css.map": "/Pizza-clicker/static/css/main.7d40bf6a.css.map",
+    "main.3693bc30.js.map": "/Pizza-clicker/static/js/main.3693bc30.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d40bf6a.css",
+    "static/js/main.3693bc30.js"
+  ]
+}
