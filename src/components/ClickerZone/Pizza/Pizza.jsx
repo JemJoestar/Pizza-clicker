@@ -1,19 +1,18 @@
 import { addMoney } from 'Store/mainReducer';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { StyledPizza } from './Pizza.styled';
 
 export const Pizza = () => {
-    const dispatch = useDispatch()
-    const currentMoney = useSelector(state => state.main.money)
+  const dispatch = useDispatch();
 
-    return (
-    <>
-      <button onClick={() => handlePizzaClick(dispatch)}>pizza</button>
-        {currentMoney}$
-    </>
+  return (
+    <StyledPizza onClick={() => handlePizzaClick(dispatch)}>
+      pizza
+    </StyledPizza>
   );
 };
 
-const handlePizzaClick = (dispatch) => {
+const handlePizzaClick = dispatch => {
   dispatch(addMoney());
 };

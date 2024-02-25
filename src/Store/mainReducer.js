@@ -91,18 +91,18 @@ const mainSlice = createSlice({
       state.money = action.payload;
     },
     addMoney: (state, action) => {
-      if (state.energyStorage.ammount < state.moneyPerClick.ammount) {
+      if (
+        state.energyStorage.ammount < Math.ceil(state.moneyPerClick.ammount / 2)
+      ) {
         return;
       }
       state.money += action.payload || state.moneyPerClick.ammount;
-      state.energyStorage.ammount -= state.moneyPerClick.ammount;
+      state.energyStorage.ammount -= Math.ceil(state.moneyPerClick.ammount / 2);
     },
     increaseEnergy: (state, action) => {
       state.energyStorage.ammount +=
         action.payload || state.energyGeneration.ammount;
-      state.energyStorage.ammount = Number(
-        state.energyStorage.ammount.toFixed(1)
-      );
+
       if (state.energyStorage.ammount > state.energyStorage.maxAmmount) {
         state.energyStorage.ammount = state.energyStorage.maxAmmount;
       }
@@ -113,24 +113,23 @@ const mainSlice = createSlice({
   },
   extraReducers: builder =>
     builder
-    // UPGRADE ENERGY GENERATION
+      // UPGRADE ENERGY GENERATION
       .addCase(upgradeEnergyGenerationThunk.pending, (state, action) => {
         state.error = null;
       })
       .addCase(upgradeEnergyGenerationThunk.fulfilled, (state, action) => {
         state.money -= state.energyGeneration.price;
 
-        state.energyGeneration.ammount = Number(
-          (state.energyGeneration.ammount + action.payload).toFixed(1)
-        );
+        state.energyGeneration.ammount += action.payload;
 
         state.energyGeneration.level += 1;
 
         state.energyGeneration.price *= 1.1;
 
-        state.energyGeneration.price = Number(
-          state.energyGeneration.price.toFixed(0)
-        );
+        state.energyGeneration.price =
+          state.energyGeneration.level *
+          25 *
+          Math.ceil(state.energyGeneration.level / 15);
       })
       // UPGRADE MAX ENERGY
       .addCase(upgradeMaxEnergyThunk.pending, (state, action) => {
@@ -139,15 +138,14 @@ const mainSlice = createSlice({
       .addCase(upgradeMaxEnergyThunk.fulfilled, (state, action) => {
         state.money -= state.energyStorage.price;
 
-        state.energyStorage.maxAmmount = Number(
-          (state.energyStorage.maxAmmount + action.payload).toFixed(1)
-        );
+        state.energyStorage.maxAmmount += action.payload;
 
         state.energyStorage.level += 1;
 
-        state.energyStorage.price = Number(
-          (state.energyStorage.price * 1.1).toFixed(0)
-        );
+        state.energyStorage.price =
+          state.energyStorage.level *
+          50 *
+          Math.ceil(state.energyStorage.level / 15);
       })
       // UPGRADE MONEY|CLICK
       .addCase(upgradeMoneyPerClickThunk.pending, (state, action) => {
@@ -156,12 +154,13 @@ const mainSlice = createSlice({
       .addCase(upgradeMoneyPerClickThunk.fulfilled, (state, action) => {
         state.money -= state.moneyPerClick.price;
 
-        state.moneyPerClick.ammount += action.payload;
-
         state.moneyPerClick.level += 1;
-        state.moneyPerClick.price = Number(
-          (state.moneyPerClick.price * 1.2).toFixed(0)
-        );
+
+        state.moneyPerClick.ammount += action.payload;
+        state.moneyPerClick.price =
+          state.moneyPerClick.level *
+          200 *
+          Math.ceil(state.moneyPerClick.level / 15);
       })
       // UPGRADE MONEY|SECOND
       .addCase(upgradeMoneyPerSecondThunk.pending, (state, action) => {
@@ -173,9 +172,10 @@ const mainSlice = createSlice({
         state.moneyPerSecond.ammount += action.payload;
 
         state.moneyPerSecond.level += 1;
-        state.moneyPerSecond.price = Number(
-          (state.moneyPerSecond.price * 1.2).toFixed(0)
-        );
+        state.moneyPerSecond.price =
+          state.moneyPerSecond.level *
+          50 *
+          Math.ceil(state.moneyPerSecond.level / 15);
       }),
 });
 

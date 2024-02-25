@@ -7,6 +7,7 @@ import {
   upgradeMoneyPerClickThunk,
   upgradeMoneyPerSecondThunk
 } from 'Store/mainReducer';
+import { StyledUpgradeZone } from './UpgradeZone.styled';
 
 export const UpgradeZone = () => {
   const energyGenerationInfo = useSelector(
@@ -18,46 +19,37 @@ export const UpgradeZone = () => {
   const moneyPerSecondInfo = useSelector(state => state.main.moneyPerSecond);
   const dispatch = useDispatch();
   return (
-    <div>
+    <StyledUpgradeZone>
       <p>Energy Gen</p>
       <UpgradeCard
         description={'+0.5 energy per second '}
         title={'Upgrade energy generation'}
-        price={energyGenerationInfo.price}
+        info={energyGenerationInfo}
         upgradeFn={e => dispatch(upgradeEnergyGenerationThunk(0.5))}
+        
       />
-      <p>lvl {energyGenerationInfo.level}</p>
-      <p>total/s {energyGenerationInfo.ammount}</p>
 
       <p>Max Energy</p>
       <UpgradeCard
         description={'+5 max energy  '}
         title={'Upgrade max energy'}
-        price={maxEnergyInfo.price}
+        info={maxEnergyInfo}
         upgradeFn={e => dispatch(upgradeMaxEnergyThunk(5))}
       />
-      <p>lvl {maxEnergyInfo.level}</p>
-      <p>total energy {maxEnergyInfo.maxAmmount}</p>
-
       <p>Money per click</p>
       <UpgradeCard
         description={'+1$  per click  '}
         title={'Upgrade $ per click'}
-        price={moneyPerClickInfo.price}
+        info={moneyPerClickInfo}
         upgradeFn={e => dispatch(upgradeMoneyPerClickThunk(1))}
       />
-      <p>lvl {moneyPerClickInfo.level}</p>
-      <p>total $/click {moneyPerClickInfo.ammount}</p>
-
       <p>Money per second</p>
       <UpgradeCard
         description={'+1$  per second  '}
         title={'Upgrade $ per second'}
-        price={moneyPerSecondInfo.price}
+        info={moneyPerSecondInfo}
         upgradeFn={e => dispatch(upgradeMoneyPerSecondThunk(1))}
       />
-      <p>lvl {moneyPerSecondInfo.level}</p>
-      <p>total $/s {moneyPerSecondInfo.ammount}</p>
-    </div>
+    </StyledUpgradeZone>
   );
 };
