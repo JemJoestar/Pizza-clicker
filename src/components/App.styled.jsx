@@ -16,14 +16,6 @@ export const StyledApp = styled.div`
         flex-direction: column;
     }
     margin: 0 auto;
-    @media only screen and (min-width: 768px) {
-        .game{
-            flex-direction: row;
-
-        }
-        max-width: none;
-       width: 746px; 
-
-    }
+  
     
 `

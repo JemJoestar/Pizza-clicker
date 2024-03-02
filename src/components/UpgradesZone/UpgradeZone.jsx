@@ -8,7 +8,6 @@ import {
   upgradeMoneyPerSecondThunk,
 } from 'Store/mainReducer';
 import { StyledUpgradeZone } from './UpgradeZone.styled';
-import woodTexture from 'images/wood.png';
 
 export const UpgradeZone = () => {
   const energyGenerationInfo = useSelector(
@@ -22,7 +21,7 @@ export const UpgradeZone = () => {
   const moneyPerSecondInfo = useSelector(state => state.main.moneyPerSecond);
   const dispatch = useDispatch();
   return (
-    <StyledUpgradeZone woodTexture={woodTexture}>
+    <StyledUpgradeZone >
       <p className="total-levels">Total levels: {totalLevels}</p>
       <UpgradeCard
         description={'+0.5 energy per second '}

@@ -12,9 +12,7 @@ export const StyledUpgradeZone = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
 
-  @media only screen and (min-width: 768px) {
-    border-radius: 0 10px 10px 0;
-  }
+
 
   .total-levels{
     font-size: 16px;

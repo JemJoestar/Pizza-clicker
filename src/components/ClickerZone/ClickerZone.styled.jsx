@@ -11,6 +11,7 @@ export const StyledClickerZone = styled.div`
 
   .current-money {
     font-size: 20px;
+    font-weight: 600;
     font-family: cursive;
     margin-bottom: 20px;
   }
