@@ -27,7 +27,7 @@ export const StyledUpgradeZone = styled.div`
     display: flex;
     justify-content: left;
     flex-direction: column;
-
+    color: #000000;
     padding: 12px;
     position: relative;
     width: 100%;
@@ -37,6 +37,7 @@ export const StyledUpgradeZone = styled.div`
       font-size: 20px;
       font-weight: 600;
       margin-bottom: 4px;
+      color: inherit;
     }
     .price {
       background-color: #f0c789;
@@ -45,6 +46,7 @@ export const StyledUpgradeZone = styled.div`
       margin-top: 4px;
       border-radius: 4px;
       font-weight: 600;
+      color: inherit
     }
 
     .level {
@@ -53,6 +55,7 @@ export const StyledUpgradeZone = styled.div`
       font-weight: 600;
       top: 16px;
       right: 16px;
+      color: inherit;
     }
   }
 `;
