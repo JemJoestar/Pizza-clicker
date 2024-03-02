@@ -33,7 +33,9 @@ export const StyledEnergy = styled.div`
     position: relative;
     background-color: #ffffff8f;
     border-radius: 4px;
-    
+    display: flex;
+    justify-content: left;
+
     z-index: 0;
     .energy {
       height: 100%;
@@ -47,7 +49,8 @@ export const StyledEnergy = styled.div`
         right: -5px;
         font-size: 20px;
         z-index: 5;
-    }
+      }
+      transition: width 100ms ease-out;
     }
   }
   .current-energy {
@@ -55,5 +58,6 @@ export const StyledEnergy = styled.div`
     top: 0;
     left: 0;
     right: 0;
+    z-index: 6;
   }
 `;
