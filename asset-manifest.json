@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Pizza-clicker/static/css/main.81b1650e.css",
-    "main.js": "/Pizza-clicker/static/js/main.3477fe4e.js",
+    "main.js": "/Pizza-clicker/static/js/main.1aac244e.js",
     "static/media/stage2.jpg": "/Pizza-clicker/static/media/stage2.751a73a9686370f7569d.jpg",
     "static/media/stage3.jpg": "/Pizza-clicker/static/media/stage3.baa06281975dc4f1e04a.jpg",
     "static/media/stage4.jpg": "/Pizza-clicker/static/media/stage4.c4a81dd87d7936948d2a.jpg",
@@ -9,10 +9,10 @@
     "static/media/stage1.jpg": "/Pizza-clicker/static/media/stage1.d7bbdece0fc570cba5ef.jpg",
     "index.html": "/Pizza-clicker/index.html",
     "main.81b1650e.css.map": "/Pizza-clicker/static/css/main.81b1650e.css.map",
-    "main.3477fe4e.js.map": "/Pizza-clicker/static/js/main.3477fe4e.js.map"
+    "main.1aac244e.js.map": "/Pizza-clicker/static/js/main.1aac244e.js.map"
   },
   "entrypoints": [
     "static/css/main.81b1650e.css",
-    "static/js/main.3477fe4e.js"
+    "static/js/main.1aac244e.js"
   ]
 }
