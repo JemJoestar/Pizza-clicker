@@ -1,7 +1,16 @@
 @import-normalize; /* bring in normalize.css styles */
 
 body {
-    background-image: linear-gradient( #F8BE67,  #ECE285);
-    
-}
+  background-image: linear-gradient(#f8be67, #ece285, #f8be67);
 
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}

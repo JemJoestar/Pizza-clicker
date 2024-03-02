@@ -5,48 +5,46 @@ import {
   upgradeEnergyGenerationThunk,
   upgradeMaxEnergyThunk,
   upgradeMoneyPerClickThunk,
-  upgradeMoneyPerSecondThunk
+  upgradeMoneyPerSecondThunk,
 } from 'Store/mainReducer';
 import { StyledUpgradeZone } from './UpgradeZone.styled';
+import woodTexture from 'images/wood.png';
 
 export const UpgradeZone = () => {
   const energyGenerationInfo = useSelector(
     state => state.main.energyGeneration
   );
+
+  const totalLevels = useSelector(state => state.main.totalLevels);
   const maxEnergyInfo = useSelector(state => state.main.energyStorage);
 
   const moneyPerClickInfo = useSelector(state => state.main.moneyPerClick);
   const moneyPerSecondInfo = useSelector(state => state.main.moneyPerSecond);
   const dispatch = useDispatch();
   return (
-    <StyledUpgradeZone>
-      <p>Energy Gen</p>
+    <StyledUpgradeZone woodTexture={woodTexture}>
+      <p className="total-levels">Total levels: {totalLevels}</p>
       <UpgradeCard
         description={'+0.5 energy per second '}
-        title={'Upgrade energy generation'}
+        title={'Energy generation'}
         info={energyGenerationInfo}
         upgradeFn={e => dispatch(upgradeEnergyGenerationThunk(0.5))}
-        
       />
-
-      <p>Max Energy</p>
       <UpgradeCard
         description={'+5 max energy  '}
-        title={'Upgrade max energy'}
+        title={'Max energy'}
         info={maxEnergyInfo}
         upgradeFn={e => dispatch(upgradeMaxEnergyThunk(5))}
       />
-      <p>Money per click</p>
       <UpgradeCard
         description={'+1$  per click  '}
-        title={'Upgrade $ per click'}
+        title={'$ per click'}
         info={moneyPerClickInfo}
         upgradeFn={e => dispatch(upgradeMoneyPerClickThunk(1))}
       />
-      <p>Money per second</p>
       <UpgradeCard
         description={'+1$  per second  '}
-        title={'Upgrade $ per second'}
+        title={'$ per second'}
         info={moneyPerSecondInfo}
         upgradeFn={e => dispatch(upgradeMoneyPerSecondThunk(1))}
       />

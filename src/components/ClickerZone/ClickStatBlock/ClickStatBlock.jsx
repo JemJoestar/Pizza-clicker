@@ -1,25 +1,20 @@
-import { increaseEnergy } from 'Store/mainReducer';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
+import { StyledEnergy } from '../ClickerZone.styled';
 
 export const ClickStatBlock = () => {
-  const dispatch = useDispatch();
   const energyObj = useSelector(state => state.main.energyStorage);
+  const currentPercent = (energyObj.ammount / energyObj.maxAmmount) * 100 + '%';
 
   return (
-    <div>
-      <p>Current energy: {energyObj.ammount.toFixed(1)}</p>
-      <input
-        type="range"
-        name="energy"
-        className='energy-range'
-        id="energy"
-        min={0}
-        max={energyObj.maxAmmount}
-        disabled
-        value={energyObj.ammount}
-      />
-      <button onClick={() => dispatch(increaseEnergy())}></button>
-    </div>
+    <StyledEnergy currentPercent={currentPercent}>
+      
+      <div className="energy-range">
+        <div className="energy">
+          <span>🔥</span>
+        </div>
+        <p className="current-energy">{energyObj.ammount.toFixed(1)}/{energyObj.maxAmmount.toFixed(1)}</p>
+      </div>
+    </StyledEnergy>
   );
 };

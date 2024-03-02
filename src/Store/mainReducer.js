@@ -23,6 +23,7 @@ const INITIAL_STATE = {
     ammount: 1,
     price: 25,
   },
+  totalLevels: 3,
   error: null,
 };
 
@@ -130,6 +131,7 @@ const mainSlice = createSlice({
           state.energyGeneration.level *
           25 *
           Math.ceil(state.energyGeneration.level / 15);
+        state.totalLevels = calculateTotalLevels(state);
       })
       // UPGRADE MAX ENERGY
       .addCase(upgradeMaxEnergyThunk.pending, (state, action) => {
@@ -146,6 +148,7 @@ const mainSlice = createSlice({
           state.energyStorage.level *
           50 *
           Math.ceil(state.energyStorage.level / 15);
+        state.totalLevels = calculateTotalLevels(state);
       })
       // UPGRADE MONEY|CLICK
       .addCase(upgradeMoneyPerClickThunk.pending, (state, action) => {
@@ -161,6 +164,7 @@ const mainSlice = createSlice({
           state.moneyPerClick.level *
           200 *
           Math.ceil(state.moneyPerClick.level / 15);
+        state.totalLevels = calculateTotalLevels(state);
       })
       // UPGRADE MONEY|SECOND
       .addCase(upgradeMoneyPerSecondThunk.pending, (state, action) => {
@@ -176,8 +180,18 @@ const mainSlice = createSlice({
           state.moneyPerSecond.level *
           50 *
           Math.ceil(state.moneyPerSecond.level / 15);
+        state.totalLevels = calculateTotalLevels(state);
       }),
 });
+
+function calculateTotalLevels(state) {
+  return (
+    state.energyGeneration.level +
+    state.energyStorage.level +
+    state.moneyPerSecond.level +
+    state.moneyPerClick.level
+  );
+}
 
 export const {
   setMoney,

@@ -18,8 +18,10 @@ export const App = () => {
   return (
     <StyledApp>
       <h1>Pizza Clicker</h1>
-      <ClickerZone />
-      <UpgradeZone />
+      <div className="game">
+        <ClickerZone />
+        <UpgradeZone />
+      </div>
     </StyledApp>
   );
 };

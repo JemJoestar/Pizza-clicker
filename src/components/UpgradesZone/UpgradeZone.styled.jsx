@@ -1,8 +1,60 @@
-import styled from "@emotion/styled";
-
+import styled from '@emotion/styled';
 
 export const StyledUpgradeZone = styled.div`
-    .upgrade-card{
-        background-color: #EBECAB;
+  width: 100%;
+  background-color: #f0c789;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 0 0 10px 10px;
+  
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media only screen and (min-width: 768px) {
+    border-radius: 0 10px 10px 0;
+  }
+
+  .total-levels{
+    font-size: 16px;
+    font-weight: 600;
+
+  }
+
+  .upgrade-card {
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+
+    padding: 12px;
+    position: relative;
+    width: 100%;
+
+    background-color: #ebecab;
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 4px;
     }
-`
+    .price {
+      background-color: #f0c789;
+      padding: 4px;
+      margin-bottom: 4px;
+      margin-top: 4px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .level {
+      position: absolute;
+      font-size: 16px;
+      font-weight: 600;
+      top: 16px;
+      right: 16px;
+    }
+  }
+`;
