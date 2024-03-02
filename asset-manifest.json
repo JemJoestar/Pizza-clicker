@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/Pizza-clicker/static/css/main.762a3702.css",
-    "main.js": "/Pizza-clicker/static/js/main.f06db0a5.js",
+    "main.css": "/Pizza-clicker/static/css/main.81b1650e.css",
+    "main.js": "/Pizza-clicker/static/js/main.b7621bc0.js",
+    "static/media/wood.png": "/Pizza-clicker/static/media/wood.d329098c565499edc314.png",
+    "static/media/stage3.jpg": "/Pizza-clicker/static/media/stage3.c3333dbba20c57b6ee40.jpg",
+    "static/media/stage2.jpg": "/Pizza-clicker/static/media/stage2.0e7921daac6ac33f6f11.jpg",
+    "static/media/stage4.jpg": "/Pizza-clicker/static/media/stage4.12fa8ad116922fa8d89f.jpg",
+    "static/media/stage5.jpg": "/Pizza-clicker/static/media/stage5.d34e6e8c2f53bf2dbba2.jpg",
+    "static/media/stage1.jpg": "/Pizza-clicker/static/media/stage1.f65f1dba7174beee5c64.jpg",
     "index.html": "/Pizza-clicker/index.html",
-    "main.762a3702.css.map": "/Pizza-clicker/static/css/main.762a3702.css.map",
-    "main.f06db0a5.js.map": "/Pizza-clicker/static/js/main.f06db0a5.js.map"
+    "main.81b1650e.css.map": "/Pizza-clicker/static/css/main.81b1650e.css.map",
+    "main.b7621bc0.js.map": "/Pizza-clicker/static/js/main.b7621bc0.js.map"
   },
   "entrypoints": [
-    "static/css/main.762a3702.css",
-    "static/js/main.f06db0a5.js"
+    "static/css/main.81b1650e.css",
+    "static/js/main.b7621bc0.js"
   ]
 }
